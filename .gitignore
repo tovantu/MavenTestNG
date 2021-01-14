@@ -1,0 +1,7 @@
+# Ignore target folder
+target/
+
+# Ignore idea folder
+.idea/
+*.iml
+*.iws

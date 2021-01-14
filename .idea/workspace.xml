@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca426b6c-f444-42c4-aeb5-0b49e14e26e9" name="Default Changelist" comment="" />
+    <list default="true" id="ca426b6c-f444-42c4-aeb5-0b49e14e26e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Non-BDD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Non-BDD.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
