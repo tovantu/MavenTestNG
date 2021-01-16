@@ -1,2 +1,2 @@
-# Junit5Maven
-Junit5Maven
+# Command run test
+mvn clean test -DthreadCount=3
