@@ -24,9 +24,17 @@
         <xml.path.version>4.3.3</xml.path.version>
         <json.simple.version>1.1.1</json.simple.version>
         <jackson.databind.version>2.12.1</jackson.databind.version>
+        <mssql.jdbc.version>8.4.1.jre8</mssql.jdbc.version>
     </properties>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>${mssql.jdbc.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
