@@ -1,4 +1,4 @@
-package ApiHelper;
+package apihelper;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;

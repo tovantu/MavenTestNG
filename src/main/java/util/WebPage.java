@@ -1,5 +1,5 @@
-package Util;
-import PageObject.HomePage;
+package util;
+import pageobjects.HomePage;
 
 public class WebPage {
 

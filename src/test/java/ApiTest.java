@@ -1,5 +1,4 @@
-import ApiHelper.ApiHelper;
-import Util.TestBase;
+import apihelper.ApiHelper;
 import io.restassured.response.Response;
 
 import java.util.HashMap;

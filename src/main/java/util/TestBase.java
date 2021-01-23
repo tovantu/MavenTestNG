@@ -1,7 +1,7 @@
-package Util;
+package util;
 
-import Drivers.DriverManager;
-import UiHelper.ReadProperties;
+import driver.DriverManager;
+import uihelper.ReadProperties;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
@@ -24,7 +24,7 @@ public class TestBase {
         extentTest = ExtendManager.getInstance().createTest(method.getName());
         DriverManager.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         DriverManager.getDriver().manage().window().maximize();
-        String URL = ReadProperties.getInstance("TestSetting").getProperty("url");
+        String URL = ReadProperties.getInstance("testsetting").getProperty("url");
         DriverManager.getDriver().get(URL);
         webPage = new WebPage();
     }

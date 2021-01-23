@@ -1,4 +1,4 @@
-package UiHelper;
+package uihelper;
 
 import java.util.Random;
 

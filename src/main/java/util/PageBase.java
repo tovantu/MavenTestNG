@@ -1,8 +1,8 @@
-package Util;
+package util;
 
 
-import Drivers.DriverManager;
-import UiHelper.ReadProperties;
+import driver.DriverManager;
+import uihelper.ReadProperties;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,12 +10,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
 public class PageBase {
     public WebDriver driver;
     public WebDriverWait wait;
-    public int timeOut = Integer.parseInt(ReadProperties.getInstance("TestSetting").getProperty("timeOut"));
+    public int timeOut = Integer.parseInt(ReadProperties.getInstance("testsetting").getProperty("timeOut"));
 
     public PageBase(){
         driver = DriverManager.getDriver();

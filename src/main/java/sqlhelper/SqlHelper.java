@@ -1,6 +1,6 @@
-package SqlHelper;
+package sqlhelper;
 
-import UiHelper.ReadProperties;
+import uihelper.ReadProperties;
 
 import java.sql.*;
 
@@ -13,7 +13,7 @@ public class SqlHelper {
             e.printStackTrace();
         }
 
-        String connectionUrl = ReadProperties.getInstance("TestSetting").getProperty("sqlConnection");;
+        String connectionUrl = ReadProperties.getInstance("testsetting").getProperty("sqlConnection");;
 
         try (Connection connection = DriverManager.getConnection(connectionUrl);
              Statement statement = connection.createStatement();) {

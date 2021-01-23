@@ -1,4 +1,4 @@
-package UiHelper;
+package uihelper;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
@@ -12,7 +12,7 @@ public class ReadCsvFile {
 
     //This function return a list of array list
     public static ArrayList<ArrayList<String>> readCsv(String fileName){
-        String file = System.getProperty("user.dir") + String.format("\\src\\main\\recources\\DataTest\\%s.csv",fileName);
+        String file = System.getProperty("user.dir") + String.format("\\src\\main\\recources\\datatest\\%s.csv",fileName);
         ArrayList<String> col1 = new ArrayList<>();
         ArrayList<String> col2 = new ArrayList<>();
         try (CSVReader reader = new CSVReader(new FileReader(file))) {

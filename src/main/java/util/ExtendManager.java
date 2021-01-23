@@ -1,4 +1,4 @@
-package Util;
+package util;
 
 import com.aventstack.extentreports.AnalysisStrategy;
 import com.aventstack.extentreports.ExtentReports;
@@ -15,7 +15,7 @@ public class ExtendManager {
     public synchronized static ExtentReports getInstance() {
         if (extent == null) {
             String output = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss'.html'").format(new Date());
-            String file = System.getProperty("user.dir") + String.format("\\Report\\%s", output);
+            String file = System.getProperty("user.dir") + String.format("\\report\\%s", output);
             createInstance(file);
         }
 

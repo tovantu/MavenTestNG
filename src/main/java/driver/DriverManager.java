@@ -1,6 +1,6 @@
-package Drivers;
+package driver;
 
-import UiHelper.ReadProperties;
+import uihelper.ReadProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -14,7 +14,7 @@ public class DriverManager {
     public DriverManager(){
         String browser = ReadProperties.getInstance("TestSetting").getProperty("browser");
         if(browser.equals("Chrome")){
-            System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\src\\main\\java\\Drivers\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\src\\main\\java\\driver\\chromedriver.exe");
             driver = new ChromeDriver();
         }
     }

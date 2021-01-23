@@ -1,7 +1,7 @@
-package UiHelper;
+package uihelper;
 
 
-import Drivers.DriverManager;
+import driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
