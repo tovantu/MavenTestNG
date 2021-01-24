@@ -15,7 +15,7 @@ public class ExtendManager {
     public synchronized static ExtentReports getInstance() {
         if (extent == null) {
             String output = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss'.html'").format(new Date());
-            String file = System.getProperty("user.dir") + String.format("\\report\\%s", output);
+            String file = System.getProperty("user.dir") + String.format("\\reports\\%s", output);
             createInstance(file);
         }
 
