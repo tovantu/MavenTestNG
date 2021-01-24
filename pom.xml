@@ -109,6 +109,7 @@
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <parallel>methods</parallel>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
         </plugins>
