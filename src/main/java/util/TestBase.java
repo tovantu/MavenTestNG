@@ -19,7 +19,8 @@ public class TestBase {
     public WebPage webPage;
     private ExtentTest extentTest;
 
-    @BeforeMethod
+
+    @BeforeMethod(alwaysRun = true)
     public void setUp(Method method){
         extentTest = ExtendManager.getInstance().createTest(method.getName());
         DriverManager.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -29,7 +30,7 @@ public class TestBase {
         webPage = new WebPage();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void cleanUp(ITestResult result) throws IOException {
         if(result.getStatus() == ITestResult.FAILURE){
             String base64Screenshot = ((TakesScreenshot)DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
@@ -43,7 +44,7 @@ public class TestBase {
         DriverManager.resetDriver();
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void afterSuite(){
         ExtendManager.getInstance().flush();
     }
