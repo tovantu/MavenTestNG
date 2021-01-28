@@ -1,28 +1,27 @@
 # Required:
 * Java, Maven
 # Command run test
-    mvn clean test -DthreadCount=3
-    mvn clean test -DthreadCount=3 -Dgroups=group1
+    mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml -Dtestng.dtd.http=true" -DthreadCount=2
 
 # How to create test
 
     1. New page object class in pageobjects package and this class must inherit form PageBase class.
-    2. Create instance of the page at WebPage under hooks package.
+    2. Create instance of the page at WebPage.
     3. New test class in test/java package and this class must inherit form TestBase class.
-* Add common function at PageBase class under hooks package.
+* Add common function at PageBase class under pageobjects package.
 
 # Data test and test config
 * Data test is under resouces/DataTest package.
 * Change config at properties file under resouces package.
     Example: Browser, url, timeout, sql connection
     
-# Common functions for UI
-* Use classes at uihelper
+# Common functions
+* Use classes under common package.
 
-# How to use common
-* Call get/post/put/delete functions at common class under common package.
+# How to use ApiHelper
+* Call get/post/put/delete functions at ApiHelper class under common package.
 
-# How to use sqlhelper
+# How to use Sqlhelper
 * Download and copy "mssql-jdbc_auth-8.4.1.x64" into java/bin folder.
 https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-manage-for-sql-server?view=sql-server-ver15
 * Call the executeQuery function at sqlhelper class under sqlhelper package with the query string.
