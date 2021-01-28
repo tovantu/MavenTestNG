@@ -2,6 +2,7 @@
 * Java, Maven
 # Command run test
     mvn clean test -DthreadCount=3
+    mvn clean test -DthreadCount=3 -Dgroups=group1
 
 # How to create test
 
