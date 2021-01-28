@@ -10,6 +10,12 @@
     3. New test class in test/java package and this class must inherit form TestBase class.
 * Add common function at PageBase class under pageobjects package.
 
+# Log4j example
+    private static final Logger logger = LogManager.getLogger(TestLog4j.class);
+        logger.info("This Will Be Printed On Info");
+        logger.warn("This Will Be Printed On Warn");
+        logger.error("This Will Be Printed On Error");
+
 # Data test and test config
 * Data test is under resouces/DataTest package.
 * Change config at properties file under resouces package.
