@@ -1,7 +1,7 @@
 # Required:
 * Java, Maven
 # Command run test
-    mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml -Dtestng.dtd.http=true" -DthreadCount=2
+    mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml" -Dtestng.dtd.http=true -DthreadCount=2
 
 # How to create test
 
