@@ -1,3 +1,5 @@
+package highrisk;
+
 import hooks.TestBase;
 import org.testng.annotations.Test;
 

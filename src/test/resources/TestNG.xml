@@ -7,13 +7,13 @@
     </listeners>
     <test name="Test Basics 2">
         <classes>
-            <class name="Test2"/>
+            <class name="highrisk.Test2"/>
         </classes>
     </test> <!-- Test -->
 
     <test name="Test Basics 3">
         <classes>
-            <class name="Test3"/>
+            <class name="highrisk.Test3"/>
         </classes>
 
     </test> <!-- Test -->

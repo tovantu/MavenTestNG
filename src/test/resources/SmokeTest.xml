@@ -12,12 +12,13 @@
                 <include name="group1"/>
             </run>
         </groups>
-        <classes>
-            <class name="Test2"/>
-            <class name="Test3"/>
-        </classes>
+        <packages>
+            <package name="highrisk"></package>
+        </packages>
+<!--        <classes>-->
+<!--            <class name="highrisk.Test2"/>-->
+<!--            <class name="highrisk.Test3"/>-->
+<!--        </classes>-->
     </test> <!-- Test -->
 
 </suite> <!-- Suite -->
-
-<!--mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml -Dtestng.dtd.http=true" -DthreadCount=2-->

@@ -1,3 +1,5 @@
+package highrisk;
+
 import manage.Retry;
 import hooks.TestBase;
 import org.testng.Assert;
