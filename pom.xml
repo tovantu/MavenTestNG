@@ -25,7 +25,14 @@
         <json.simple.version>1.1.1</json.simple.version>
         <jackson.databind.version>2.12.1</jackson.databind.version>
         <mssql.jdbc.version>8.4.1.jre8</mssql.jdbc.version>
+
+        <defaultSuiteFiles>
+            ./src/test/resources/TestNG.xml,
+        </defaultSuiteFiles>
+        <suiteFile>${defaultSuiteFiles}</suiteFile>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
@@ -110,6 +117,9 @@
                 <configuration>
                     <parallel>methods</parallel>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteFile}</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>

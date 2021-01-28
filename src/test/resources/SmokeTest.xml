@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" >
+    <listeners>
+        <listener class-name="manage.AnnotationTransformer"/>
+        <listener class-name="manage.TestListener"/>
+    </listeners>
+
+    <test name="All">
+        <groups>
+            <run>
+                <include name="group1"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="Test2"/>
+            <class name="Test3"/>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->
+
+<!--mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml -Dtestng.dtd.http=true" -DthreadCount=2-->

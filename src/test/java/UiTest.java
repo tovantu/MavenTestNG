@@ -1,9 +1,9 @@
-import util.TestBase;
+import hooks.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class UiTest extends TestBase {
-    @Test
+    @Test(groups = {"group1"})
     public void test1() throws InterruptedException {
         webPage.homePage.inputIntoSearchField("Text Test");
     }

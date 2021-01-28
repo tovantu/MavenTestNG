@@ -1,4 +1,4 @@
-import apihelper.ApiHelper;
+import common.ApiHelper;
 import io.restassured.response.Response;
 
 import java.util.HashMap;

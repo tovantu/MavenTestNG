@@ -1,6 +1,5 @@
 package pageobjects;
 
-import util.PageBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,6 +15,7 @@ public class HomePage extends PageBase {
 
     public void inputIntoSearchField(String text){
         inputFiled.sendKeys(text);
+
     }
 
 }

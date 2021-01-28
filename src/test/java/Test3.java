@@ -1,4 +1,4 @@
-import util.TestBase;
+import hooks.TestBase;
 import org.testng.annotations.Test;
 
 
@@ -9,7 +9,7 @@ public class Test3 extends TestBase {
         webPage.homePage.inputIntoSearchField("Text Test");
     }
 
-    @Test
+    @Test(groups = { "group2" })
     public void test333333333() throws InterruptedException {
         webPage.homePage.inputIntoSearchField("Text Test");
     }
