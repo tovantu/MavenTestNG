@@ -29,6 +29,6 @@ public class Utilities {
         if(isMac()||isLinux()){
             return filePath.replace("\\","/");
         }
-        return filePath.replace("\\","/");
+        return filePath;
     }
 }
