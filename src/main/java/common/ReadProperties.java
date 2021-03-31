@@ -6,25 +6,10 @@ import java.util.Properties;
 
 public class ReadProperties {
 
-//    private static ReadProperties instance = null;
-//    private Properties properties = new Properties();
-//
-//
-//    public static ReadProperties getInstance() {
-//        if (instance == null) {
-//            instance = new ReadProperties();
-//            instance.readConfig();
-//        }
-//        return instance;
-//    }
-//    public String getProperty(String key) {
-//        return properties.getProperty(key);
-//    }
-
     public static Properties getInstance(String fileName) {
         Properties properties = new Properties();
-        String file = System.getProperty("user.dir") + String.format("\\src\\main\\resources\\%s.properties", fileName);
-        try (InputStream inputStream = new FileInputStream(file)) {
+        String filePath = Utilities.getFilePathByOs(String.format("\\src\\main\\resources\\%s.properties", fileName));
+        try (InputStream inputStream = new FileInputStream(filePath)) {
             properties.load(inputStream);
             return properties;
         } catch (Exception e) {

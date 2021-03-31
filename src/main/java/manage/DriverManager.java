@@ -1,8 +1,11 @@
 package manage;
 
-import common.ReadProperties;
+import common.Common;
+import common.EnvironmentConfig;
+import common.Utilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
 
@@ -12,10 +15,13 @@ public class DriverManager {
 
 
     public DriverManager(){
-        String browser = ReadProperties.getInstance("testsetting").getProperty("browser");
-        if(browser.equals("Chrome")){
-            System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\src\\main\\resources\\drivers\\chromedriver.exe");
+        String browser = EnvironmentConfig.getBrowser();
+        if(browser.equalsIgnoreCase("chrome")){
+            System.setProperty("webdriver.chrome.driver", Utilities.getFilePathByOs("\\src\\main\\resources\\drivers\\chromedriver.exe"));
             driver = new ChromeDriver();
+        }else if(browser.equalsIgnoreCase("firefox")){
+            System.setProperty("webdriver.gecko.driver", Utilities.getFilePathByOs("\\src\\main\\resources\\drivers\\geckodriver.exe"));
+            driver = new FirefoxDriver();
         }
     }
 

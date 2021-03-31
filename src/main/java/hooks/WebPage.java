@@ -1,4 +1,6 @@
-package pageobjects;
+package hooks;
+
+import pageobjects.HomePage;
 
 public class WebPage {
     public HomePage homePage;

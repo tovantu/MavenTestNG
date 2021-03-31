@@ -1,4 +1,4 @@
-package pageobjects;
+package hooks;
 
 
 import manage.DriverManager;
@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,8 +17,16 @@ public class PageBase {
     public WebDriver driver = DriverManager.getDriver();
     public WebDriverWait wait = new WebDriverWait(driver, timeOut);
 
+    public PageBase(){
+        PageFactory.initElements(driver,this);
+    }
+
     public void waitForElementVisible(WebElement element){
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitForTextToBePresentInElement(WebElement element, String text){
+        wait.until(ExpectedConditions.textToBePresentInElement(element, text));
     }
 
     public void sendKeysByJavaScript(WebElement element, String text){

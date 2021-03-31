@@ -5,6 +5,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import common.Common;
+import common.Utilities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,10 +17,9 @@ public class ExtendManager {
     public synchronized static ExtentReports getInstance() {
         if (extent == null) {
             String output = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss'.html'").format(new Date());
-            String file = System.getProperty("user.dir") + String.format("\\reports\\%s", output);
+            String file = Utilities.getFilePathByOs(String.format("\\reports\\%s", output));
             createInstance(file);
         }
-
         return extent;
     }
 

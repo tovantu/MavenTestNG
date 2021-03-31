@@ -1,4 +1,6 @@
-package common;
+package helpers;
+
+import common.ReadProperties;
 
 import java.sql.*;
 

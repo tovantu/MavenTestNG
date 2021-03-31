@@ -5,16 +5,14 @@
         <listener class-name="manage.AnnotationTransformer"/>
         <listener class-name="manage.TestListener"/>
     </listeners>
-    <test name="Test Basics 2">
+    <test name="Test Basics">
+        <groups>
+            <run>
+                <include name="Demo"/>
+            </run>
+        </groups>
         <classes>
-            <class name="highrisk.Test2"/>
+            <class name="UiTest"/>
         </classes>
-    </test> <!-- Test -->
-
-    <test name="Test Basics 3">
-        <classes>
-            <class name="highrisk.Test3"/>
-        </classes>
-
     </test> <!-- Test -->
 </suite> <!-- Suite -->

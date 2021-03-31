@@ -17,6 +17,8 @@
         <testng.Version>7.3.0</testng.Version>
         <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
         <extent.report.version>3.1.5</extent.report.version>
+        <log4j.core.version>2.14.0</log4j.core.version>
+        <log4j.api.version>2.14.0</log4j.api.version>
 
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <opencsv.version>5.3</opencsv.version>
@@ -25,6 +27,7 @@
         <json.simple.version>1.1.1</json.simple.version>
         <jackson.databind.version>2.12.1</jackson.databind.version>
         <mssql.jdbc.version>8.4.1.jre8</mssql.jdbc.version>
+        <lombok.version>1.18.10</lombok.version>
 
         <defaultSuiteFiles>
             ./src/test/resources/TestNG.xml,
@@ -36,14 +39,20 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.14.0</version>
+            <version>${log4j.core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.14.0</version>
+            <version>${log4j.api.version}</version>
         </dependency>
 
         <dependency>

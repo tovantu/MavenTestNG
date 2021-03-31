@@ -12,10 +12,10 @@ public class ReadCsvFile {
 
     //This function return a list of array list
     public static ArrayList<ArrayList<String>> readCsv(String fileName){
-        String file = System.getProperty("user.dir") + String.format("\\src\\main\\recources\\datatest\\%s.csv",fileName);
+        String filePath = Utilities.getFilePathByOs(String.format("\\src\\main\\recources\\datatest\\%s.csv",fileName));
         ArrayList<String> col1 = new ArrayList<>();
         ArrayList<String> col2 = new ArrayList<>();
-        try (CSVReader reader = new CSVReader(new FileReader(file))) {
+        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
 
             String [] nextLine;
             int rowNumber = 0;

@@ -1,10 +1,8 @@
 package highrisk;
 
-import manage.Retry;
 import hooks.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageobjects.WebPage;
 
 
 public class Test2 extends TestBase {

@@ -1,7 +1,7 @@
 # Required:
 * Java, Maven
 # Command run test
-    mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml" -Dtestng.dtd.http=true -DthreadCount=2
+    mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml" -Dtestng.dtd.http=true -DthreadCount=2 -Dbranch=staging -Dbrowser=chrome
 
 # How to create test
 
@@ -19,7 +19,7 @@
 # Data test and test config
 * Data test is under resouces/DataTest package.
 * Change config at properties file under resouces package.
-    Example: Browser, url, timeout, sql connection
+    Example: Timeout, sql connection
     
 # Common functions
 * Use classes under common package.
