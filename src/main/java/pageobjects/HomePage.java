@@ -1,21 +1,27 @@
 package pageobjects;
 
+import common.Constant;
 import common.EnvironmentConfig;
 import hooks.PageBase;
-import manage.DriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends PageBase {
     private static Logger LOGGER = LogManager.getLogger(HomePage.class);
 
-    @FindBy(xpath = "//figure[@itemprop='image']//img[@role='presentation']")
+    @FindBy(xpath = "//div[@data-test='photos-route']//a//img[@role='presentation']")
     private WebElement firstImageUserIcon;
+
+    @FindBy(xpath = "//figure[@itemprop='image']")
+    private WebElement firstImage;
+
+    @FindBy(xpath = "//figure//a[@itemprop='contentUrl']")
+    private WebElement firstImageContentUrl;
+
+    @FindBy(xpath = "//div[@data-test='photos-route']//a[@title = 'Download photo']")
+    private WebElement downloadButton;
 
     @FindBy(xpath = "//button[@title='Follow']")
     public WebElement followButton;
@@ -31,8 +37,6 @@ public class HomePage extends PageBase {
 
     public void hoverOnFirtImageUserIcon(){
         LOGGER.info("Hover on first image user icon");
-        scrollElementIntoView(firstImageUserIcon);
-        new Actions(driver).sendKeys(Keys.PAGE_UP).build().perform();
         waitForElementVisible(firstImageUserIcon);
         moveToElement(firstImageUserIcon);
     }
@@ -50,5 +54,18 @@ public class HomePage extends PageBase {
         waitForElementVisible(followButton);
     }
 
+    public void clickOnFirstImage(){
+        firstImage.click();
+    }
+
+    public void clickOnDownloadButton(){
+        waitForElementVisible(downloadButton);
+        downloadButton.click();
+    }
+
+    public String getFirstImageId(){
+        String href = getAttribute(firstImageContentUrl, "href");
+        return href.replace(Constant.DEV_URL +"photos/","");
+    }
 
 }

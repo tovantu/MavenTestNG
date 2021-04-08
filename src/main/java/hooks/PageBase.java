@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class PageBase {
-    public int timeOut = Integer.parseInt(ReadProperties.getInstance("testsetting").getProperty("timeOut"));
+    public int timeOut = Integer.parseInt(ReadProperties.getInstanceFromResources("testsetting").getProperty("timeOut"));
     public WebDriver driver;
     public WebDriverWait wait;
 

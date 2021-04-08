@@ -104,9 +104,4 @@ public class TestListener implements ITestListener {
         extentTest.log(Status.SKIP, "Test Skipped");
         skipTestsToRemove.add(extentTest);
     }
-
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-        System.out.println("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
-    }
 }

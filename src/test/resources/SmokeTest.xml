@@ -9,7 +9,7 @@
     <test name="All">
         <groups>
             <run>
-                <include name="Demo2"/>
+                <include name="Demo1"/>
             </run>
         </groups>
 <!--        <packages>-->
