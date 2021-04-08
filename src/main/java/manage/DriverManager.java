@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
 
-    private static ThreadLocal<DriverManager> driverManager = ThreadLocal.withInitial(()-> null);
+    private static ThreadLocal<DriverManager> driverManager = ThreadLocal.withInitial(()->null);
 
     public WebDriver driver ;
 
@@ -26,7 +26,9 @@ public class DriverManager {
     }
 
     public static DriverManager createInstance(){
-        if (driverManager.get() != null) return driverManager.get();
+        if (driverManager.get() != null){
+            return driverManager.get();
+        }
         driverManager.set(new DriverManager());
         return driverManager.get();
     }
@@ -35,9 +37,10 @@ public class DriverManager {
         return createInstance().driver;
     }
 
-
     public static void resetDriver(){
         getDriver().quit();
-        driverManager.set(null);
+        driverManager.remove();
     }
+
+
 }

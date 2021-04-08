@@ -121,6 +121,12 @@
             <artifactId>extentreports</artifactId>
             <version>${extent.report.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>4.3.3</version>
+            <scope>compile</scope>
+        </dependency>
 
 
     </dependencies>

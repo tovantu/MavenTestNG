@@ -1,7 +1,9 @@
 # Required:
 * Java, Maven
 # Command run test
-    mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml" -Dtestng.dtd.http=true -DthreadCount=2 -Dbranch=staging -Dbrowser=chrome
+    mvn clean test  -Dtestng.dtd.http=true -DthreadCount=2
+    Example for real case:
+    mvn clean test -DdefaultSuiteFiles="./src/test/resources/SmokeTest.xml" -Dtestng.dtd.http=true -DthreadCount=2 -Dbranch=dev -Dbrowser=chrome
 
 # How to create test
 
@@ -11,7 +13,7 @@
 * Add common function at PageBase class under pageobjects package.
 
 # Log4j example
-    private static final Logger logger = LogManager.getLogger(TestLog4j.class);
+    private static final Logger logger = LogManager.getLogger(ClassName.class);
         logger.info("This Will Be Printed On Info");
         logger.warn("This Will Be Printed On Warn");
         logger.error("This Will Be Printed On Error");

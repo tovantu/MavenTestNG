@@ -3,17 +3,27 @@ package common;
 public class EnvironmentConfig {
 
     public static String getEnvironment(){
-        String environment = System.getProperty("branch");
-        String url = "https://www.facebook.com/";
+        String environment = getBranch();
+        String url = Constant.DEV_URL;
         if(environment.equalsIgnoreCase("staging")){
-            url = "https://www.google.com/";
+            url = Constant.STAGING_URL;
         }else if(environment.equalsIgnoreCase("release")){
-            url = "https://www.youtube.com/";
+            url = Constant.RELEASE_URL;
         }
         return url;
     }
 
+    public static String getBranch(){
+        if(System.getProperty("branch")!= null){
+            return System.getProperty("branch").toLowerCase();
+        }
+        return "dev";
+    }
+
     public static String getBrowser(){
-        return System.getProperty("browser");
+        if(System.getProperty("browser")!= null){
+            return System.getProperty("browser").toLowerCase();
+        }
+        return "Chrome";
     }
 }

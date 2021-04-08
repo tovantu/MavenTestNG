@@ -1,24 +1,22 @@
 package hooks;
 
 import common.EnvironmentConfig;
-import common.ReadProperties;
-import common.Utilities;
 import manage.DriverManager;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
-import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-    public WebPage webPage;
 
     @BeforeMethod(alwaysRun = true)
-    public void setUp(Method method){
-        DriverManager.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        DriverManager.getDriver().manage().window().maximize();
-        DriverManager.getDriver().get(EnvironmentConfig.getEnvironment());
-        webPage = new WebPage();
+    public void setUp(Method method, ITestContext context){
+        WebDriver driver = DriverManager.getDriver();
+        context.setAttribute("WebDriver", driver);
+        driver.manage().window().maximize();
+        driver.get(EnvironmentConfig.getEnvironment());
     }
 
     @AfterMethod(alwaysRun = true)

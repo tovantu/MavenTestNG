@@ -1,6 +1,7 @@
 package common;
 
 
+import hooks.PageBase;
 import manage.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -16,7 +17,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
-public class DatePicker {
+public class DatePicker extends PageBase {
     private int timeOut = 10;
     public void selectDate(String date) throws InterruptedException {
 

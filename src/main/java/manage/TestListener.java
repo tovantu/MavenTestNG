@@ -86,8 +86,9 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
-
-        String base64Screenshot = ((TakesScreenshot)DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
+        ITestContext context = iTestResult.getTestContext();
+        WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
+        String base64Screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);
         try {
             extentTest.log(Status.FAIL, "Image", MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
         } catch (IOException e) {
