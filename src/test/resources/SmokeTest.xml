@@ -9,12 +9,12 @@
     <test name="All">
         <groups>
             <run>
-                <include name="Demo1"/>
+                <include name="High"/>
             </run>
         </groups>
-<!--        <packages>-->
-<!--            <package name="highrisk"></package>-->
-<!--        </packages>-->
+        <packages>
+            <package name="UnsplashTest"></package>
+        </packages>
 <!--        <classes>-->
 <!--            <class name="highrisk.Test2"/>-->
 <!--            <class name="highrisk.Test3"/>-->

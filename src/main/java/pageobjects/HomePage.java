@@ -43,8 +43,13 @@ public class HomePage extends PageBase {
 
     public void clickOnFollowButton(){
         LOGGER.info("Click on follow button");
-        waitForElementVisible(followButton);
-        followButton.click();
+        try {
+            waitForElementVisible(followButton, 3);
+            followButton.click();
+        }catch (Exception exception){
+            clickOnFollowingButton();
+            followButton.click();
+        }
     }
 
     public void clickOnFollowingButton(){

@@ -5,14 +5,18 @@
         <listener class-name="manage.AnnotationTransformer"/>
         <listener class-name="manage.TestListener"/>
     </listeners>
-    <test name="Test Basics">
+    <test name="High Risk">
         <groups>
             <run>
-                <include name="Demo"/>
+                <include name="High"/>
             </run>
         </groups>
-        <classes>
-            <class name="UnsplashTest"/>
-        </classes>
+
+        <packages>
+            <package name="UnsplashTest"></package>
+        </packages>
+<!--        <classes>-->
+<!--            <class name="UnsplashTest"/>-->
+<!--        </classes>-->
     </test> <!-- Test -->
 </suite> <!-- Suite -->

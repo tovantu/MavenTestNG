@@ -25,6 +25,11 @@ public class PageBase {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void waitForElementVisible(WebElement element, int timeOut){
+        WebDriverWait wait = new WebDriverWait(this.driver, timeOut);
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
     public WebElement waitForElementVisibleByXpath(By by){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
