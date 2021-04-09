@@ -37,7 +37,7 @@ public class CollectionTest extends TestBase {
             webPage.collectionPage.navigate(username);
             Assert.assertTrue(webPage.collectionPage.checkNumberOfPhotosInCollection(collectionTitle,1), "Number of photos in the collection doesn't match");
             webPage.collectionPage.clickOnCollection(collectionTitle);
-            Assert.assertTrue(webPage.collectionPage.checkImageNotExistInCollection(titleFirstImage));
+            Assert.assertTrue(webPage.collectionPage.checkImageNotExistInCollection(titleFirstImage), "Image removed still exist in the collection");
         }finally {
             //Clean up data
             collectionAPI.removeCollection(collectionId);
