@@ -1,6 +1,7 @@
 package hooks;
 
 import common.EnvironmentConfig;
+import common.ReadPropertiesSingleTon;
 import manage.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -12,9 +13,8 @@ import java.lang.reflect.Method;
 public class TestBase {
 
     @BeforeMethod(alwaysRun = true)
-    public void setUp(Method method, ITestContext context){
+    public void setUp(Method method){
         WebDriver driver = DriverManager.getDriver();
-        context.setAttribute("WebDriver", driver);
         driver.manage().window().maximize();
         driver.get(EnvironmentConfig.getEnvironment());
     }

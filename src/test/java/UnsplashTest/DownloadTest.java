@@ -52,7 +52,7 @@ public class DownloadTest extends TestBase {
     }
 
     public String downloadFileByAPI(String photoId){
-        String downloadFolder = System.getProperty("user.home") + "\\Downloads\\";
+        String downloadFolder = System.getProperty("user.dir") + "\\downloads\\";
         String filePathDownloadedByAPI = "";
         PhotoAPI photoAPI = new PhotoAPI();
         String url = photoAPI.downloadPhoto(photoId);
@@ -66,7 +66,7 @@ public class DownloadTest extends TestBase {
     }
 
     public File filePathDowloaded(String photoId) throws InterruptedException {
-        String downloadFolder = System.getProperty("user.home") + "\\Downloads\\";
+        String downloadFolder = System.getProperty("user.dir") + "\\downloads\\";
         File filePathDownloaded = null;
         for (int i = 0; i <= 20; i++) {
             try {
